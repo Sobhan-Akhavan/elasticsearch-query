@@ -15,10 +15,9 @@
        - [Conditional No-Operation (noop)](#conditional-no-operation-noop)
        - [Conditional Document Deletion](#conditional-document-deletion)
     - [Upserts](#Upserts)
+4. [Deleting Documents](#deleting-documents)    
 
 ## Retrieving Documents by ID
-
-To retrieve a document by its ID, use the following request:
 
 ```
 GET /products/_doc/100
@@ -47,13 +46,11 @@ PUT /products/_doc/100
   "in_stock": 4
 }
 ```
-#### Note: If the document exists with the provided ID, it will be replaced.
+Note: If the document exists with the provided ID, it will be replaced.
 
 ## Updating Documents
 
 ### Simple Update
-
-Updating an existing field and adding a new field:
 
 ```
 POST /products/_update/100
@@ -157,4 +154,10 @@ POST /products/_update/101
     "in_stock": 5
   }
 }
+```
+
+## Deleting Documents
+
+```
+DELETE /products/_doc/101
 ```
