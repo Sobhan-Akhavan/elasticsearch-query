@@ -1,6 +1,7 @@
 # Elasticsearch CRUD Operations Guide
 
 ## Table of Contents
+
 1. [Retrieving Documents by ID](#retrieving-documents-by-id)
 2. [Indexing Documents](#indexing-documents)
    - [Indexing with Auto-Generated ID](#indexing-with-auto-generated-id)
@@ -14,12 +15,12 @@
        - [Conditional Field Update](#conditional-field-update)
        - [Conditional No-Operation (noop)](#conditional-no-operation-noop)
        - [Conditional Document Deletion](#conditional-document-deletion)
-   - [Upserts](#Upserts)
-4. [Deleting Documents](#deleting-documents)    
+   - [Upserts](#upserts)
+4. [Deleting Documents](#deleting-documents)
 
 ## Retrieving Documents by ID
 
-```
+```EQL
 GET /products/_doc/100
 ```
 
@@ -27,7 +28,7 @@ GET /products/_doc/100
 
 ### Indexing with Auto-Generated ID
 
-```
+```EQL
 POST /products/_doc
 {
   "name": "Coffee Maker",
@@ -38,7 +39,7 @@ POST /products/_doc
 
 ### Indexing with Custom ID
 
-```
+```EQL
 PUT /products/_doc/100
 {
   "name": "Toaster",
@@ -46,13 +47,14 @@ PUT /products/_doc/100
   "in_stock": 4
 }
 ```
+
 Note: If the document exists with the provided ID, it will be replaced.
 
 ## Updating Documents
 
 ### Simple Update
 
-```
+```EQL
 POST /products/_update/100
 {
   "doc": {
@@ -66,7 +68,7 @@ POST /products/_update/100
 
 #### Reducing a Field Value
 
-```
+```EQL
 POST /products/_update/100
 {
   "script": {
@@ -77,7 +79,7 @@ POST /products/_update/100
 
 #### Using Parameters in Scripts
 
-```
+```EQL
 POST /products/_update/100
 {
   "script": {
@@ -93,7 +95,7 @@ POST /products/_update/100
 
 #### Conditional Field Update
 
-```
+```EQL
 POST /products/_update/100
 {
   "script": {
@@ -108,7 +110,7 @@ POST /products/_update/100
 
 #### Conditional No-Operation (noop)
 
-```
+```EQL
 POST /products/_update/100
 {
   "script": {
@@ -125,7 +127,7 @@ POST /products/_update/100
 
 #### Conditional Document Deletion
 
-```
+```EQL
 POST /products/_update/100
 {
   "script": {
@@ -142,7 +144,7 @@ POST /products/_update/100
 
 ### Upserts
 
-```
+```EQL
 POST /products/_update/101
 {
   "script": {
@@ -158,6 +160,6 @@ POST /products/_update/101
 
 ## Deleting Documents
 
-```
+```EQL
 DELETE /products/_doc/101
 ```
