@@ -14,7 +14,7 @@
        - [Conditional Field Update](#conditional-field-update)
        - [Conditional No-Operation (noop)](#conditional-no-operation-noop)
        - [Conditional Document Deletion](#conditional-document-deletion)
-    - [Upserts](#Upserts)
+   - [Upserts](#Upserts)
 4. [Deleting Documents](#deleting-documents)    
 
 ## Retrieving Documents by ID
